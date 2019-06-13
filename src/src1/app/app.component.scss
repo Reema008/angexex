@@ -1,0 +1,39 @@
+.centre{
+    display:inline-block;
+     background-color:peachpuff;
+     
+   }
+   .button1 {
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 1px solid goldenrod;
+    border-radius: 8px;
+    background:goldenrod;
+    background: -webkit-gradient(linear, left top, left bottom, from(goldenrod), to(goldenrod));
+    background: -moz-linear-gradient(top, goldenrod,goldenrod);
+    background: linear-gradient(to bottom, goldenrod, goldenrod);
+    font: normal normal bold 20px courier new;
+    color: black;
+    text-decoration: none;
+}
+.button2 {
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 1px solid olive;
+    border-radius: 8px;
+    background:olive;
+    background: -webkit-gradient(linear, left top, left bottom, from(olive), to(olive));
+    background: -moz-linear-gradient(top,olive,olive);
+    background: linear-gradient(to bottom, olive,olive);
+    font: normal normal bold 20px courier new;
+    color: black;
+    text-decoration: none;
+}

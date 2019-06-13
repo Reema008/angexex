@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+     
+    {{ title }}
+  </h1>
+</div>
+
+
+<div >
+  <div align=center>
+    <input style = "padding: 0px 49px 0px 19px" type="text" disabled [value]="display" >  <br>
+    <input *ngIf="res!=undefined" style = "padding: 0px 49px 0px 19px" type="text" disabled [value]="res" >
+  </div>
+<table align=center style="text-align: center">
+  
+  <tr>
+    <td><button (click)="insertChar(1)" class="button" >1</button></td>
+    <td><button (click)="insertChar(2)" class="button" >2</button></td>
+    <td><button (click)="insertChar(3)" class="button">3</button></td>
+    <td><button (click)="insertOperator('+')" class="button1">+</button></td>
+  </tr>
+  <tr>
+    <td><button (click)="insertChar(4)" class="button">4</button></td>
+    <td><button (click)="insertChar(5)" class="button">5</button></td>
+    <td><button (click)="insertChar(6)" class="button">6</button></td>
+    <td><button (click)="insertOperator('-')" class="button1">-</button></td>
+  </tr>
+  <tr>
+    <td><button (click)="insertChar(7)" class="button">7</button></td>
+    <td><button (click)="insertChar(8)" class="button">8</button></td>
+    <td><button (click)="insertChar(9)" class="button">9</button></td>
+    <td><button (click)="insertOperator('*')" class="button1">*</button></td>
+  </tr>
+  <tr>
+    <td><button (click)="reset()"class="button1">C</button></td>
+    <td><button (click)="insertChar(0)" class="button">0</button></td>
+    <td><button (click)="evaluate()" class="button1">=</button></td>
+    <td><button (click)="insertOperator('/')"class="button1">/</button></td>
+  </tr>
+</table>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <div class="centre">
+  <h1>
+    My Library
+  </h1>
+
+  <div>
+    &nbsp;&nbsp;&nbsp;Title <input [(ngModel)]="title" >&nbsp;&nbsp;&nbsp;
+    Author <input [(ngModel)]="author">&nbsp;&nbsp;&nbsp;
+    <button class="button1" (click)="addObject()">Add</button>&nbsp;&nbsp;&nbsp;
+  </div>
+  <br>
+  <br>
+    <table align=center style="text-align: center" border="9">
+      <thead>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of libArray">
+          <td>{{item.title}}</td>
+          <td>{{item.author}}</td>
+          <td> <button class="button2" (click)="delByID(item.id)">Delete</button></td>
+         
+        </tr>
+       
+      </tbody>
+    </table>
+    <br>
+  <br>
+</div>
+
+<router-outlet></router-outlet>
