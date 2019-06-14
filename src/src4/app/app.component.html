@@ -1,0 +1,98 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+       {{ title }}
+    </h1>
+  <div class="formstyle">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    Full Name:    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Date of Birth:<br>
+  <input id="name" name="name" class="form-control"
+      required minlength="4" appForbiddenName="Vijay"
+      [(ngModel)]="fullname" #name="ngModel" >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input id="dob" type="date" name="dob" class="form-control"  [(ngModel)]="date" #dob="ngModel"><br>
+   <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="name.errors.required">
+    Name is required.
+  </div>
+  <div *ngIf="name.errors.minlength">
+    Name must be at least 4 characters long.
+  </div>
+  <div *ngIf="name.errors.forbiddenName">
+    Name cannot be Bob.
+  </div>
+
+</div>
+
+<div *ngIf="dob.invalid && (dob.dirty || dob.touched)"
+class="alert alert-danger">
+
+<div *ngIf="dob.errors.required">
+Date of Birth is required.
+
+</div>
+
+</div><br><br><br>
+  Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Phone Number:<br>
+   <input id="mail" type="email" name="mail" class="form-control"
+   required minlength="10" [(ngModel)]="mailid" #mail="ngModel" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="number" name="phnum"><br>
+   <div *ngIf="mail.invalid && (mail.dirty || mail.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="mail.errors.required">
+    Mail is required.
+  </div>
+  <div *ngIf="mail.errors.email">
+      Invalid Mail.
+    </div>
+  <div *ngIf="mail.errors.minlength">
+    Mail must be at least 10 characters long.
+  </div>
+  
+
+</div>
+   
+   
+   
+   <br><br><br>
+  Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Tell us about yourself:<br>
+   <input type="password" name="password">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <textarea cols="20" rows="1"></textarea><br><br><br>
+   <select name="states">
+      <option value="Telangana">Telangana</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Karnataka">Karnataka</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="gender" value="male" > Male
+    <input type="radio" name="gender" value="female"> Female<br><br><br>
+    <input type="checkbox" name="subscribe" value="ifyes">I want to receive email about updates to website
+    <br><br><br><br>
+    <div style="text-align: center"><button class="btn btn-primary" [disabled]="f.form.pristine || f.form.invalid">Add Name</button></div>
+    
+    </form>
+    
+        
+  </div>
+  
+  
+  </div>
+  
+  
+  <router-outlet></router-outlet>
+  
